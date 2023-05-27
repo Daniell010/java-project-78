@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Daniell010/java-project-78/workflows/hexlet-check/badge.svg)](https://github.com/Daniell010/java-project-78/actions)
+[![Java CI](https://github.com/Daniell010/java-project-78/actions/workflows/main.yml/badge.svg)](https://github.com/Daniell010/java-project-78/actions/workflows/main.yml)
 <h1>Валидатор данных</h1>
+
 
 <p>Валидатор данных - это библиотека для проверки корректности любых данных. Такие библиотеки существуют во многих языках программирования, так как большинство программ работает с внешними данными, которые необходимо проверять на корректность. В первую очередь это касается данных из форм, заполняемых пользователями.</p>
 
