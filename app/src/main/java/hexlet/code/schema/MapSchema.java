@@ -1,4 +1,4 @@
-package schema;
+package hexlet.code.schema;
 
 import java.util.Map;
 
