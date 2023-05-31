@@ -35,7 +35,7 @@ public class MapValidatorTest {
 
         Map<String, BaseSchema> schemas = new HashMap<>();
         schemas.put("name", new Validator().string().required());
-        schemas.put("age",new Validator().number().positive());
+        schemas.put("age", new Validator().number().positive());
         schema.shape(schemas);
 
         Map<String, Object> human1 = Map.of(
