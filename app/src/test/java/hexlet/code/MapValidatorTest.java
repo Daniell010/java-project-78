@@ -9,11 +9,10 @@ import java.util.Map;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class MapValidatorTest {
-    private static final Validator VALIDATOR = new Validator();
 
     @Test
     public void testRequired() {
-        var schema = VALIDATOR.map();
+        var schema = new Validator().map();
         assertThat(schema.isValid(null)).isTrue();
 
         schema.required();
@@ -23,7 +22,7 @@ public class MapValidatorTest {
 
     @Test
     public void testSizeof() {
-        var schema = VALIDATOR.map().sizeof(2);
+        var schema = new Validator().map().sizeof(2);
 
         assertThat(schema.isValid(Map.of("1", "1", "2", "2"))).isTrue();
 
@@ -32,12 +31,11 @@ public class MapValidatorTest {
 
     @Test
     public void shapeTest() {
-
-        var schema = VALIDATOR.map();
+        var schema = new Validator().map();
 
         Map<String, BaseSchema> schemas = new HashMap<>();
-        schemas.put("name", VALIDATOR.string().required());
-        schemas.put("age", VALIDATOR.number().positive());
+        schemas.put("name", new Validator().string().required());
+        schemas.put("age",new Validator().number().positive());
         schema.shape(schemas);
 
         Map<String, Object> human1 = Map.of(

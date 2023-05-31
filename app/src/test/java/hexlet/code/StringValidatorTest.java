@@ -5,11 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class StringValidatorTest {
-    private static final Validator VALIDATOR = new Validator();
 
     @Test
     public void testRequired() {
-        var schema = VALIDATOR.string();
+        var schema = new Validator().string();
         assertThat(schema.isValid(null)).isTrue();
         assertThat(schema.isValid("")).isTrue();
 
@@ -22,14 +21,14 @@ public class StringValidatorTest {
 
     @Test
     public void testMinLength() {
-        var schema = VALIDATOR.string().minLength(3);
+        var schema = new Validator().string().minLength(3);
         assertThat(schema.isValid("12")).isFalse();
         assertThat(schema.isValid("123")).isTrue();
     }
 
     @Test
     public void testContains() {
-        var schema = VALIDATOR.string().contains("test");
+        var schema = new Validator().string().contains("test");
         assertThat(schema.isValid("adasdteast")).isFalse();
         assertThat(schema.isValid("123test231")).isTrue();
     }

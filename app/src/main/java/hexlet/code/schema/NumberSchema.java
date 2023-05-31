@@ -7,12 +7,12 @@ public final class NumberSchema extends BaseSchema {
     }
 
     public NumberSchema positive() {
-        addCheck(n -> n == null || ((Integer) n) > 0);
+        addCheck(n -> n == null || ((int) n) > 0);
         return this;
     }
 
     public NumberSchema range(int leftBorder, int rightBorder) {
-        addCheck(n -> n == null || (((Integer) n) >= leftBorder && ((Integer) n) <= rightBorder));
+        addCheck(n -> n == null || (((int) n) >= leftBorder && ((int) n) <= rightBorder));
         return this;
     }
 }
