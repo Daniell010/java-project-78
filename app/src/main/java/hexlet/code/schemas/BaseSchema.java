@@ -12,11 +12,15 @@ public abstract class BaseSchema {
         checks.add(validate);
     }
 
+    /**
+     * Метод добавляет проверку на null.
+     *
+     * @return экземпляр класса BaseSchema.
+     */
     public BaseSchema required() {
         addCheck(Objects::nonNull);
         return this;
     }
-
     public final boolean isValid(Object validatedString) {
         return checks.stream()
                 .allMatch(sp -> sp.test(validatedString));
